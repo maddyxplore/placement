@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Sign Up</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts1/material-icon/css/material-design-iconic-font.min.css'%}">
+    <link rel="stylesheet" href="{% static 'vendor/nouislider/nouislider.min.css'%}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css1/style.css'%}">
+    
+
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{% static 'images/form-img.jpg'%}" alt="">
+                    <div class="signup-img-content">
+                        <h2>Student Login</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" action="register">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="name" class="required">First name</label>
+                                    <input type="text" name="name" id="name" required/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Last name</label>
+                                    <input type="text" name="last_name" id="last_name" required/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="Username" class="required">Username</label>
+                                    <input type="text" name="username" id="Username" required/>
+                                </div>
+                                <h6 style="color:tomato;">{{err}}</h6>
+
+                                <div class="form-input">
+                                    <label for="password" class="required">Password</label>
+                                    <input type="password" name="password" id="password" pattern="[a-zA-Z0-9_-]{6,12}" title="must be alphanumeric in 6-12 chars" required/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="password" class="required">Confirm Password</label>
+                                    <input type="password" name="password1" id="password" required/>
+                                </div>
+                                <h6 style="color:tomato;">{{check}}</h6>
+
+                                <div class="form-input">
+                                    <label for="email" class="required">Email</label>
+                                    <input type="text" name="email" id="email" required/>
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Phone number</label>
+                                    <input type="text" name="phone_number" id="phone_number" required/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="chequeno">Tenth Percentage</label>
+                                    <input type="text" name="tenth" id="tenth"  required/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="blank_name">Twelth Percentage</label>
+                                    <input type="text" name="twelth" id="twelth"  required/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="payable">CGPA</label>
+                                    <input type="text" name="cgpa" id="cgpa" required/>
+                                </div>
+                                <!-- Example single danger button -->
+                                <div class="form-input">
+                                <label>languages known
+                                <select class="browser-default custom-select"  name="lang" required></label>
+
+                                  <option value="python">python</option>
+                                    <option value="java">Java</option>
+                                    <option value="c++">c ++</option>
+                                    <option value="c#">c #</option>
+                                    <option value="c">c</option>
+                                    <option value="javascript">javascript</option>
+                                  </select>
+                                <br><br>
+                                <div class="form-input">
+                                    <label for="blank_name">Extra Skills</label>
+                                    <input type="text" name="other" id="twelth" placeholder="mention if any"/>
+                                </div>
+                            </div>
+                            <div class="form-input">
+                                <label for="payable">City </label>
+                                <input type="text" name="city" id="city" required/>
+                            </div>
+
+                        
+                       
+                        <div class="form-submit">
+                            <br>
+                            <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                            <h6 style="color:tomato;">{{check}}</h6>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'vendor/nouislider/nouislider.min.js'%}"></script>
+    <script src="{% static 'vendor/wnumb/wNumb.js'%}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/jquery.validate.min.js'%}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/additional-methods.min.js'%}"></script>
+    <script src="{% static 'js1/signup.js'%}"></script>
+</body>
+</html>

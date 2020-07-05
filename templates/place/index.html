@@ -1,0 +1,316 @@
+{% load static %}	
+	<!DOCTYPE html>
+	<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="{% static 'img/fav.png'%}">
+		<!-- Author Meta -->
+		<meta name="author" content="codepixer">
+		<!-- Meta Description -->
+		<meta name="description" content=""> 
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Placetivity.in</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+			<!--
+			CSS
+			============================================= -->
+			<link rel="stylesheet" href="{% static 'css/linearicons.css'%}">
+			<link rel="stylesheet" href="{% static 'css/font-awesome.min.css'%}">
+			<link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+			<link rel="stylesheet" href="{% static 'css/magnific-popup.css'%}">
+			<link rel="stylesheet" href="{% static 'css/nice-select.css'%}">					
+			<link rel="stylesheet" href="{% static 'css/animate.min.css'%}">
+			<link rel="stylesheet" href="{% static 'css/owl.carousel.css'%}">
+			<link rel="stylesheet" href="{% static 'css/main.css'%}">
+		<!-- ===scripts===-->
+			<script src="{% static 'js/vendor/jquery-2.2.4.min.js'%}"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+			<script src="{% static 'js/vendor/bootstrap.min.js'%}"></script>			
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+  			<script src="{% static 'js/easing.min.js'%}"></script>			
+			<script src="{% static 'js/hoverIntent.js'%}"></script>
+			<script src="{% static 'js/superfish.min.js'%}"></script>	
+			<script src="{% static 'js/jquery.ajaxchimp.min.js'%}"></script>
+			<script src="{% static 'js/jquery.magnific-popup.min.js'%}"></script>	
+			<script src="{% static 'js/owl.carousel.min.js'%}"></script>			
+			<script src="{% static 'js/jquery.sticky.js'%}"></script>
+			<script src="{% static 'js/jquery.nice-select.min.js'%}"></script>			
+			<script src="{% static 'js/parallax.min.js'%}"></script>		
+			<script src="{% static 'js/mail-script.js'%}"></script>	
+			<script src="{% static 'js/main.js'%}"></script>
+		</head>
+		<body>
+			
+
+			  <header id="header" id="home">
+			    <div class="container">
+			    	<div class="row align-items-center justify-content-between d-flex">
+				      <div id="logo">
+						<p style="font-size: x-large; color:aliceblue">Placetivity.in
+						</p>
+					</div>
+				      <nav id="nav-menu-container">
+				        <ul class="nav-menu">
+				          
+						 {% if user.is_authenticated %}
+
+						  
+							<li><a class="ticker-btn">{{name}}</a>
+								<ul>
+									<li><a  href="logout">logout</a></li>
+								</ul>
+							</li>
+					
+
+						{% else %}
+				   
+						  <li><a class="ticker-btn">Signup</a>
+							<ul>
+								<li><a  href="register">Student signup</a></li>
+								<li><a  href="company">Company signup</a></li>
+								
+							</ul>
+						</li>
+						  
+						  <li><a class="ticker-btn" href="login">Login</a>
+							
+						</li>				          				          
+						</ul>
+
+						{% endif %}
+				      </nav><!-- #nav-menu-container -->		    		
+			    	</div>
+			    </div>
+			  </header><!-- #header -->
+
+
+			<!-- start banner Area -->
+			<section class="banner-area relative" id="home">	
+				<div class="overlay overlay-bg"></div>
+				<div class="container">
+					<div class="row fullscreen d-flex align-items-center justify-content-center">
+						<div class="banner-content col-lg-12">
+							{%if user.is_authenticated %}
+							<h1 class="text-white">
+								{{na}}			
+							</h1>	
+								
+							<h1 class="text-white">
+								<span>{{no}}+</span> Jobs posted last week				
+							</h1>
+							{% else %}
+									<h1 class="text-white">
+										<span>{{no}}+</span> Jobs posted last week	
+									</h1>
+							{% endif %}
+								
+								{% if staff  %}
+									<div class="row justify-content-center form-wrap">
+									
+									<div class="col-lg-2 form-cols">
+									    <button type="button" class="btn btn-info" style="color: aliceblue;">
+											<a href="job">
+									      <span class="lnr lnr-magnifier"></span> post </a>
+									    </button>
+									</div>	</div>
+									
+									{% endif %}						
+								</div>
+							</form>	
+							
+						</div>											
+					</div>
+				</div>
+			</section>
+			<!-- End banner Area -->	
+
+			<!-- Start features Area -->
+			<section class="features-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-md-6">
+							<div class="single-feature">
+								<h4>Searching</h4>
+								<p>
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="single-feature">
+								<h4>Applying</h4>
+								<p>
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="single-feature">
+								<h4>Security</h4>
+								<p>
+								</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<div class="single-feature">
+								<h4>Notifications</h4>
+								<p>
+								</p>
+							</div>
+						</div>																		
+					</div>
+				</div>	
+			</section>
+			<!-- End features Area -->
+			
+			<!-- Start popular-post Area -->
+			
+			
+			<!-- Start post Area -->
+			<section class="post-area section-gap">
+				<div class="container">
+					<div class="row justify-content-center d-flex">
+						<div class="col-lg-8 post-list">
+					{% if user.is_authenticated %}
+						{% if staff %}
+
+						{% for d in data %}
+							<div class="single-post d-flex flex-row"  id="job">
+								
+								<div class="details" >
+									<div class="title d-flex flex-row justify-content-between">
+										<div class="titles">
+											<h4>Language known : {{d.lang}}</h4>
+											<h6>Student Name : {{d.fname}}</h6>					
+										</div>
+										<ul class="btns" style="padding-left : 300px;">
+											<form action="mail" method="POST">
+												{% csrf_token %}
+											<input type="hidden" value="{{d.email}}" name="emailreq">
+											<input type="hidden" value="{{user.email}}" name="emailres">
+											<input type="hidden" value="{{d.fname}}" name="stuname">
+											<input type="hidden" value="{{user.first_name}}" name="emailname">
+
+
+											<li><a type="submit" class="text-center" target="_blank">
+												<input type="submit" value="Hire" style="background-color: transparent; border: none;"  >
+											</a></li>
+										</ul></form>
+									</div>
+									<p>
+										Cgpa(current) : {{d.cgpa}} / 10
+									</p>
+									<p class="address"><span></span>Tenth percentage : {{d.ten_m}} %</p>
+									<p class="address"><span></span>Twelth percentage {{d.twe_m}} %</p>
+									<p class="address"><span class="lnr lnr-map"></span>Extra Skills : {{d.other}}</p></a>
+
+									<p class="address"><a href="tel:{{d.phone_number}}">
+										<span class="lnr lnr-phone"></span> {{d.phone_number}}</p></a>
+								</div>
+							</div>
+							{% endfor %}
+
+						{% else %}	
+						{% for d in data %}
+							<div class="single-post d-flex flex-row">
+								
+								<div class="details">
+									<div class="title d-flex flex-row justify-content-between">
+										<div class="titles">
+											<a href="single.html"><h4>Job Title : {{d.job_title}}</h4></a>
+											<h6>Company Name : {{d.com_name}}</h6>					
+										</div>
+										<ul class="btns" style="padding-left : 300px;">
+											<li><a  href=mailto:{{d.reg_link}} class="text-center" target="_blank">Apply</a></li>
+										</ul>
+									</div>
+									<p>
+										Job Description : {{d.job_des}}
+									</p>
+									<h5>Job Nature: {{d.job_nature}}</h5>
+									<a href="https://www.google.com/maps/search/{{d.com_add}}" target="_blank";>
+									<p class="address"><span class="lnr lnr-map"></span>Address : {{d.com_add}}</p></a>
+									<h6 class="address" style="font-size: xx-small;">click the above link to view on maps
+									</h6>
+									<p class="address"><span class="lnr lnr-database"></span>salary range : {{d.sal_range}}</p>
+									<h5 class="address"><span class="lnr lnr-map"></span>City :  {{d.com_city}}</h5>
+								</div>
+							</div>
+							{% endfor %}
+						{% endif %}
+					{% endif %}
+							
+							
+
+						</div>
+						</div>																		
+								</div>
+							</div>							
+
+						</div>
+					</div>
+				</div>	
+			</section>
+			<!-- End post Area -->
+				
+
+		
+
+		
+		
+			<!-- start footer Area -->		
+			<footer class="footer-area section-gap">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3  col-md-12">
+							
+						</div>
+						<div class="col-lg-6  col-md-12">
+							<div class="single-footer-widget newsletter">
+								<h6>Placement</h6>
+								<p>You can trust us. we only send promo offers, not a single spam.</p>
+								<div id="mc_embed_signup">
+									<form  action="subs" method="get" class="form-inline">
+											{% csrf_token %}
+										<div class="form-group row" style="width: 100%">
+											<div class="col-lg-8 col-md-12">
+												<input name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+												
+											</div> 
+										
+											<div class="col-lg-4 col-md-12">
+												<button class="nw-btn primary-btn" type="submit">Subscribe<span class="lnr lnr-arrow-right"></span></button>
+											</div> 
+										</div>		
+										<div class="info"></div>
+									</form>
+								</div>		
+							</div>
+						</div>
+									
+					</div>
+
+					<div class="row footer-bottom d-flex justify-content-between">
+						
+						<div class="col-lg-4 col-sm-12 footer-social">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-behance"></i></a>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- End footer Area -->		
+
+			
+		</body>
+	</html>
+
+
+

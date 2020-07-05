@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Sign Up</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts1/material-icon/css/material-design-iconic-font.min.css'%}">
+    <link rel="stylesheet" href="{% static 'vendor/nouislider/nouislider.min.css'%}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css1/style.css'%}">
+   </head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{% static 'images/form-img.jpg'%}" alt="">
+                    <div class="signup-img-content">
+                        <h2>Staff Login</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" action="company">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="name" class="required">Company name</label>
+                                    <input type="text" name="name" id="name" required/>
+                                </div>
+                                
+                                <div class="form-input">
+                                    <label for="Username" class="required">Company Username</label>
+                                    <input type="text" name="username" id="Username" required/>
+                                </div>
+                                <h6 style="color:tomato;">{{err}}</h6>
+
+                                <div class="form-input">
+                                    <label for="password" class="required">Password</label>
+                                    <input type="password" name="password" id="password" pattern="[a-zA-Z0-9_-]{6,12}" title="must be alphanumeric in 6-12 chars" required/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="password" class="required">Confirm Password</label>
+                                    <input type="password"  id="password1" name="cpass" required/>
+                                </div>
+                                <h6 style="color:tomato;">{{check}}</h6>
+
+                                <div class="form-input">
+                                    <label for="email" class="required">Company Email</label>
+                                    <input type="text" name="email" id="email" required/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Company Phone number</label>
+                                    <input type="text" name="phone_number" id="phone_number" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                
+                                <div class="form-input">
+                                    <label for="blank_name">Company Address</label>
+                                    <textarea type="text" rows="3" cols="40" name="com_add"  required></textarea>
+                                </div>
+                                <div class="form-input">  
+                                    <label for="chequeno">Company City</label>
+                                    <input type="text" name="com_city" id="tenth" required/>
+                                </div>
+                                <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" onload="pass()" name="submit" />
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'vendor/nouislider/nouislider.min.js'%}"></script>
+    <script src="{% static 'vendor/wnumb/wNumb.js'%}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/jquery.validate.min.js'%}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/additional-methods.min.js'%}"></script>
+    <script src="{% static 'js1/signup.js'%}"></script>
+</body>
+</html>

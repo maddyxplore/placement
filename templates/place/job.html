@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Job Post</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts1/material-icon/css/material-design-iconic-font.min.css'%}">
+    <link rel="stylesheet" href="{% static 'vendor/nouislider/nouislider.min.css'%}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css1/style.css'%}">
+   </head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                    <img src="{% static 'images/form-img.jpg'%}" alt="">
+                    <div class="signup-img-content">
+                        <h2>post a job</h2>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form" action="job">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="name" class="required">Job Title</label>
+                                    <input type="text" name="job_title" id="job_tit" required/>
+                                </div>
+                                
+                                <div class="form-input">
+                                    <label for="Username" class="required">Company Name</label>
+                                    <input type="text" name="com_name" id="com_name" required/>
+                                </div>
+                                <div class="form-input">
+                                    <label>Job Nature
+                                    <select class="browser-default custom-select"  name="job_nature" required></label>
+    
+                                      <option value="Full Time">full time</option>
+                                        <option value="Part Time">Part time</option>
+                                      </select>
+                                    <br><br>
+                                </div>
+                                <div class="form-input">
+                                    <label>Salary Range
+                                    <select class="browser-default custom-select"  name="sal_range" required></label>
+    
+                                      <option value="10K- 15K">10K - 15K</option>
+                                      <option value="15K- 25K">15K - 25K</option>
+                                      <option value="25K- 35K">25K - 35K</option>
+                                      <option value="35K- 45K">35K - 45K</option>
+                                      <option value="45K- 75K">45K - 75K</option>
+                                      <option value="75K- 1L">75K - 1L</option>
+                                      <option value="ABOVE 1L">ABOVE 1L</option>
+                                      </select>
+                                    <br><br>
+                                </div>
+                                <div class="form-input">
+                                    <label for="blank_name">Company Address</label>
+                                    <textarea type="text" rows="3" cols="40" name="com_add" id="" required /></textarea>
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Company Mail</label>
+                                    <h6 style="font-size: x-small;">Mail where students have to apply for job</h6>
+                                    <input type="text" name="res_link" id="res_link" required/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                
+                                <div class="form-input">
+                                    <label for="blank_name">Job Description</label>
+                                    <h6 style="font-size: x-small;">minimum of 100 chars*</h6>
+                                    <textarea type="text" rows="3" cols="40" name="job_des" id="" required /></textarea>
+                                </div>
+                                
+                                <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit" onload="pass()" name="submit" />
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+    <script src="{% static 'vendor/nouislider/nouislider.min.js'%}"></script>
+    <script src="{% static 'vendor/wnumb/wNumb.js'%}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/jquery.validate.min.js'%}"></script>
+    <script src="{% static 'vendor/jquery-validation/dist/additional-methods.min.js'%}"></script>
+    <script src="{% static 'js1/signup.js'%}"></script>
+</body>
+</html>
